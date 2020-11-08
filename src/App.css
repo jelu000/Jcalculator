@@ -6,6 +6,11 @@
   height: 40vmin;
   pointer-events: none;
 }
+/*Center a picture*/
+.Pict {
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
