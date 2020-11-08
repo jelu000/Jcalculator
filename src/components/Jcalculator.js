@@ -40,35 +40,32 @@ export default class Jcalculator extends Component {
      this.setState({resultat: tempresultat});
 
 
-     if(knappnum_string ==="="){//knappnum === "C" isNaN(knappnum)
+     if(knappnum_string ==="="){//Räknar ut svar om likamedKnapp trycks
 
         try {
-          let svaret = eval(this.state.resultat);
-          console.log("Inne if =" + svaret);
-          this.setState({resultat: tempresultat+svaret });
+          let svaret = eval(this.state.resultat);//Räkanar ut svar
+          this.setState({resultat: tempresultat+svaret });//lägger till svarer til textsträngen
         }
-        catch (e){
+        catch (e){//skriver ut error text om matematiskt utryck inte är giltigt
           this.setState({resultat: "Syntax error!"});
         }
     }
 
-    else if(knappnum_string === "C"){
-        console.log("Else If C ");
+    else if(knappnum_string === "C"){//Tömmer räknare
         this.setState({resultat: "" });
     }
 
-    else if(knappnum_string === "CE"){
-        console.log("Else If CE ");
+    else if(knappnum_string === "CE"){//Tar bort sista tecknet på inmatningen
         let svaret = this.state.resultat;
         svaret = svaret.substring(0, svaret.length - 1);
-        console.log("Inne if =" + svaret);
+        //console.log("Inne if =" + svaret);
         this.setState({resultat: svaret });
     }
 
   };//End of
 
 
-  //Här händer det, dvs sida renderas! wrap="off" cols="30" rows="5">
+  //Här händer det, dvs sida renderas!
   render() {
 
     var bodystyle = {
